@@ -1,0 +1,36 @@
+
+<div id="app">
+    <button @click="get()">
+        sjshsjh
+    </button>
+<div v-for="element in data">
+
+</div>
+
+</div>
+<script src="https://unpkg.com/vue"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+
+<script>
+    let vm = new Vue({
+    el: "#app",
+    //data: {},
+    methods: {
+        get: function() {
+           
+            axios.get('https://api.intra.42.fr/v2/achievements', 
+            {
+                Headers : {
+                "Authorization": "Bearer 77c7f405ef97247d240cef615ad59e71294cb234cbaf1236d8c0c531d607df38"
+            }
+        }
+            )
+                .then( function(response) {
+                    console.log(response.data)
+                });
+        },
+        
+    }
+});
+</script>
+ 
