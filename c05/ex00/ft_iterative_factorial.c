@@ -6,11 +6,9 @@
 /*   By: yelhaime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 08:22:10 by yelhaime          #+#    #+#             */
-/*   Updated: 2021/08/15 08:28:52 by yelhaime         ###   ########.fr       */
+/*   Updated: 2021/08/16 15:23:02 by yelhaime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include <unistd.h>
 
 int	ft_iterative_factorial(int nb)
 {
@@ -29,11 +27,4 @@ int	ft_iterative_factorial(int nb)
 		i++;
 	}
 	return (res);
-
-}
-#include <stdio.h>
-int main()
-{
-	printf("%d",ft_iterative_factorial(5));
-
 }

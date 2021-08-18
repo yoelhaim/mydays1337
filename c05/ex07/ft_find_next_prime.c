@@ -6,26 +6,26 @@
 /*   By: yelhaime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 17:01:26 by yelhaime          #+#    #+#             */
-/*   Updated: 2021/08/15 17:44:38 by yelhaime         ###   ########.fr       */
+/*   Updated: 2021/08/18 17:28:06 by yelhaime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	is_prime(int nbr)
+int	ft_is_prime(int nb)
 {
-	int	i;
+	int	p;
 
-	i =2;
-	while (nbr % i != 0)
+	p = 2;
+	if (nb < 2)
+		return (0);
+	while (p <= nb / 2)
 	{
-		if(i > nbr)
-			break;
-		i++;
+		if (nb % p == 0)
+			return (0);
+		p++;
 	}
-	if (nbr == i)
-		return (1);
-	return (0);
+	return (1);
 }
 
 int	ft_find_next_prime(int nb)
@@ -33,14 +33,13 @@ int	ft_find_next_prime(int nb)
 	int	i;
 
 	i = 2;
+	if (nb <= 1)
+		return (2);
 	while (1)
 	{
-		if (is_prime(nb))
+		if (ft_is_prime(nb) == 1)
 			return (nb);
-		++nb;
+		nb++;
 	}
-}
-int main()
-{
-	printf("%d",ft_find_next_prime(7));
+	return (0);
 }

@@ -6,31 +6,36 @@
 /*   By: yelhaime <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/15 17:54:11 by yelhaime          #+#    #+#             */
-/*   Updated: 2021/08/15 18:33:01 by yelhaime         ###   ########.fr       */
+/*   Updated: 2021/08/17 10:16:51 by yelhaime         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
+void	ft_putstr(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		write(1, &str[i], 1);
+		i++;
+	}
+}
+
 int	main(int ac, char **av)
 {
 	int	i;
-	int	j;
 
-	i = 0;
-	j = 1;
+	i = 1;
 	if (ac > 1)
 	{
-		while (av[j])
+		while (i < ac)
 		{
-			while (av[j][i])
-			{
-				write(1, &av[j][i], 1);
-				i++;
-			}
+			ft_putstr(av[i]);
 			write(1, "\n", 1);
-			j++;
-			i = 0;
+			i++;
 		}
 	}
 	return (0);
